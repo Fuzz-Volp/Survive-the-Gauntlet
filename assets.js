@@ -22,7 +22,7 @@ const mapOne = [
 ]
 const mapTwo = [
     [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    [3, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
     [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
     [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
     [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
@@ -110,13 +110,23 @@ const obejctThree = [
 ]
 
     // Map and Object Key
-const space = 0
-const floor = 1
-const wall = 2
-const enemy = 3
-const item = 4 
-const trap = 5
-const exit = 6
+const space = 0;
+const floor = 1;
+const wall = 2;
+const enemy = 3;
+const item = 4;
+const trap = 5;
+const exit = 6;
+
+    // Map Size Details
+const size = 64;
+const rows = map.length;
+const colums = map[0].length;
+
+    // Map Build
+
+// Functions
+
 
 
 
