@@ -1,6 +1,6 @@
 body {
-    background-image: url("lets-play-bridge.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
+    font-family: Calibri;
+    transition: 0.2s ease;
+    text-align: center;
+}
+
