@@ -7,8 +7,6 @@
     <title>Survive the Gauntlet</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./Model/model.css">
-    <script src="./app.js" defer></script>
-    <script src="./assets.js" defer></script>
     <script src="./Model/model.js" defer></script>
 
 </head>
@@ -30,17 +28,10 @@
     <span><button class="one">One Player</button><button class="two">Two Player</button></span>
   </div>
 </div>
-<!-- game container -->
-<div id="game-container-1" class="game-container">
-    <div id="map-and-controls">
-     <!-- start game map -->
-     <div id="game-map-1" class="game-map">
-       <div id="tiles" class="layer"></div>
-       <div id="sprites" class="layer"></div>
-       <div id="success-msg">Goal reached!</div>
-     </div>
-   </div>
-<div class="player"></div>
-    
+<canvas class="maze"></canvas>
+
+<script src="./app.js" defer></script>
+<script src="./assets.js" defer></script>
+
 </body>
 </html>
