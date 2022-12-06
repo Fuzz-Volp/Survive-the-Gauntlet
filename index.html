@@ -11,27 +11,31 @@
 
 </head>
 <body>
-    <button id="openModal">!</button>
-<div id="modal">
-  <div id="modal-textbox">
-    <a id="close" href="#">Close</a>
-    <h1>How to Play</h1>
-    <p>
-        Adventurers beware! 
-    </p>
-    <p>
-      This has been the tomb of many a poor soul. This maze is filled with traps and creatures that could break any brave soul, that however, is the least of your concerns, it is filled with poison gasses that will eventually take your life. Hurry, your time is running out!
-    </p>
-    <p>
-       Use the arrow keys to navigate the treacherous pathways to safety.
-    </p>
-    <span><button class="one">One Player</button><button class="two">Two Player</button></span>
+   
+<canvas id="maze"></canvas>
+<div class="modelContainer">
+  <!-- <button id="openModal">!</button> -->
+  <div id="modal">
+    <div id="modal-textbox">
+      <a id="close" href="#">Close</a>
+      <h1>How to Play</h1>
+      <p>
+          Adventurers beware! 
+      </p>
+      <p>
+        This has been the tomb of many a poor soul. This maze is filled with traps and creatures that could break any brave soul, that however, is the least of your concerns, it is filled with poison gasses that will eventually take your life. Hurry, your time is running out!
+      </p>
+      <p>
+         Use the arrow keys to navigate the treacherous pathways to safety.
+      </p>
+      <span><button class="one">One Player</button><button class="two">Two Player</button></span>
+    </div>
   </div>
-</div>
-<canvas class="maze"></canvas>
 
 <script src="./app.js" defer></script>
 <script src="./assets.js" defer></script>
 
+
+</div>
 </body>
 </html>

@@ -3,6 +3,9 @@ console.log("app.js is connected")
 
 
 // Global Variables
+
+    
+    // player movement
 let rightPressed = false;
 let leftPressed = false;
 let upPressed = false;
@@ -11,11 +14,25 @@ let downPressed = false;
 
 // Classes
 // class Player {
-
+//     constructor(name, health, coord, damage) {
+//         this.name = name;
+//         this.health = health; 
+//         this.coord = coord;
+//         this.damage = damage;
+//     }
 // }
 
-// class Gameboard{
+// class enemy{
+//     constructor(health, coord, dmg) {
+//         this.health = health;
+//         this.coord = coord;
+//         this.dmg = dmg;
+//     }
+// }
 
+// Game.prototype.reset = function() {
+//     this.enemy = [];
+//     this.map = [];
 // }
 
 

@@ -13,7 +13,7 @@
   //Event Handlers
   // Event handler to open the modal
   const openModal = () => {
-    modal.style.display = 'block';
+    modal.style.display = 'flex';
   };
 
   const closeModal = () => {
@@ -26,4 +26,4 @@
   closeBtn.addEventListener("click", closeModal);
  //
  
- setTimeout(openModal, 5000);
+ setTimeout(closeModal, 10000);
