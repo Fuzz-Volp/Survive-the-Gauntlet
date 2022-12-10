@@ -119,6 +119,7 @@ class Maze {
         }
         this.draw();
     }
+
     isUnvisited() {
         for (let col = 0; col < this.cols; col++) {
             for(let row = 0; row < this.rows; row++) {
@@ -129,6 +130,7 @@ class Maze {
         }
         return false;
     }
+
     neighborUnvisited(cellSection) {
         return ((cellSection.col !== 0 && !this.cells[cellSection.col - 1][cellSection.row].visited) ||
                 (cellSection.col !== (this.cols - 1) && !this.cells[cellSection.col + 1][cellSection.row].visited) ||
@@ -136,5 +138,45 @@ class Maze {
                 (cellSection.row !== (this.rows - 1) && !this.cells[cellSection.col][cellSection.row + 1].visited));
     }
 
-    
+    draw() {
+        ctx.fillStyle = this.backgroundColor; 
+        ctx.fillRect(0, 0, mazeHeight, mazeWidth);
+        ctx.fillStyle = this.endColor; 
+        ctx.fillRect(0, 0, mazeHeight, mazeWidth);
+        ctx.fillStyle = this.mazeColor;
+        ctx.strokeRect(0, 0, mazeHeight, mazeWidth0);
+
+        for (let col = 0; col < this.cols; col++) {
+            for (let row = 0; row < this.rows; row++) {
+                if (this.cells[col][row].eastWall) {
+                    ctx.beginPath();
+                    ctx.moveTo((col + 1) * this.size, row * this.size);
+                    ctx.lineTo((col + 1) * this.size, (row + 1 ) * this.size); 
+                    ctx.strok(); 
+                }
+                if (this.cells[col][row].northWall) {
+                    ctx.beginPath();
+                    ctx.moveTo((col + 1) * this.size, row * this.size);
+                    ctx.lineTo((col + 1) * this.size,  row  * this.size); 
+                    ctx.strok(); 
+                }
+                if (this.cells[col][row].southWall) {
+                    ctx.beginPath();
+                    ctx.moveTo(col  * this.size, (row + 1) * this.size);
+                    ctx.lineTo((col + 1) * this.size, (row + 1 ) * this.size); 
+                    ctx.strok(); 
+                }
+                if (this.cells[col][row].westWal) {
+                    ctx.beginPath();
+                    ctx.moveTo(col * this.size, row * this.size);
+                    ctx.lineTo(col * this.size, (row + 1 ) * this.size); 
+                    ctx.strok(); 
+                }
+            }
+        }
+        ctx.fillStyle = this.playerColor; 
+        ctx.fillRect((player1.col * this.size) + 2, (player1.row * this.size) + 2, this.size - 4, this.size - 4)
+        // ctx.fillRect((player2.col * this.size) + 2, (player2.row * this.size) + 2, this.size - 4, this.size - 4)
+    }
+
 }
