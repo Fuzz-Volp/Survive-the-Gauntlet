@@ -5,7 +5,7 @@ let ctx;
 let canvas;
 let maze;
 let mazeHeight;
-let mazewidth;
+let mazeWidth;
 let player1;
 let player2;
 
@@ -41,5 +41,21 @@ class Maze {
         this.playerColor = 'blue';
         this.cells = [];
         this.generate();
+    }
+    generate() {
+        mazeHeight = this.rows * this.size; 
+        mazeWidth = this.cols * this.size; 
+        canvas.height = mazeHeight;
+        canvas.width = mazeWidth; 
+        canvas.style.height = mazeHeight;
+        canvas.style.width = mazeWidth;
+
+        for (let col = 0; col < this.cols; col++) { 
+            this.cells[col] = [];
+            for (let row = 0; row < this.rows; row++) {
+                this.cells[col][row] = new Cell(col, row);
+            } 
+        }
+        
     }
 }
