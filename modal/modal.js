@@ -4,7 +4,7 @@ console.log("model.js is connected")
 
 const openBtn = document.querySelector("#openModal");  
 const modal = document.querySelector("#modal");
-const closeBtn = document.querySelector("#close");
+const closeBtn = document.querySelector(".start");
 
 // Functions
 const openModal = () => {
@@ -19,4 +19,4 @@ modal.style.display = 'none';
 openBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 
-setTimeout(closeModal, 10000);
+setTimeout(closeModal, 20000);
