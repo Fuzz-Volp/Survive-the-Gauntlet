@@ -56,6 +56,49 @@ class Maze {
                 this.cells[col][row] = new Cell(col, row);
             } 
         }
-        
+        let randomCol = Math.floor(Math.random() * this.cols); 
+        let randomRow = Math.floor(Math.random() * this.rows);
+    
+        let stack = []; 
+        stack.push(this.cells[randomCol][randomRow]);
+
+        let currentCell;
+        let direction; 
+        let neighbor;
+        let nextCell; 
+
+        while (this.unvisited(this.cells)) {
+            currentCell = stack[stack.length - 1]; 
+            currentCell.visited = true; 
+            if (this.unvisited(currentCell)) {
+                nextCell = null; 
+                neighbor = false; 
+                do {
+                    direction = Math.floor(Math.random() * 4); 
+                    switch (direction) {
+                        case 0: 
+                            if (currentCell.col !== (this.cols -1) && !this.cells[currentCell.col +1][currentCell.row].visited) {
+                                currentCell.eastWall = false;
+                                nextCell = this.cells[currentCell.col + 1][currentCell.row];
+                                nextCell.westWal = false; 
+                                neighbor = true;
+                            }
+                            break;
+                        case 1:
+                            if (currentCell.row !== 0 && !this.cells[currentCell.col][currentCell.row - 1].visited) {
+                                currentCell.northWall = false;
+                                nextCell = this.cells[currentCell.col][currentCell.row -1];
+                                nextCell.southWall = false;
+                                neighbor = true; 
+                            }
+                            break;
+                        case 2: 
+                            if (currentCell.row !== (this.rows - 1) && !this.cells[currentCell.col][currentCell.row + 1].visited) {
+
+                            }
+                    }
+                }
+            }
+        }
     }
 }
