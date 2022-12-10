@@ -209,4 +209,14 @@ function onKeyDown(evt) {
     maze.draw();
 }
 
+// onLoad: variables and eventListeners
 
+function onLoad() {
+    canvas = document.getElementById('maze');
+    ctx = canvas.getContext('2d');
+    player1 = new Player();
+    player2 = new Player();
+    maze = new Maze(20, 20, 40);
+
+    document.addEventListener('keydown', onKeyDown);
+}
