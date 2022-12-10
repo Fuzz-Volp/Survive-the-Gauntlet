@@ -129,4 +129,12 @@ class Maze {
         }
         return false;
     }
+    neighborUnvisited(cellSection) {
+        return ((cellSection.col !== 0 && !this.cells[cellSection.col - 1][cellSection.row].visited) ||
+                (cellSection.col !== (this.cols - 1) && !this.cells[cellSection.col + 1][cellSection.row].visited) ||
+                (cellSection.row !== 0 && !this.cells[cellSection.col][cellSection.row - 1].visited) ||
+                (cellSection.row !== (this.rows - 1) && !this.cells[cellSection.col][cellSection.row + 1].visited));
+    }
+
+    
 }
