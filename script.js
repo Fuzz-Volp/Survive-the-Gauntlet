@@ -1,3 +1,5 @@
+console.log("script.js is connected")
+
 let ctx;
 let canvas;
 let maze;
@@ -6,6 +8,7 @@ let mazeWidth;
 let timer;
 let player1;
 let player2;
+let end;
 
 
 class Player {
@@ -155,6 +158,9 @@ class Maze {
 
     ctx.fillStyle = this.endColor;
     ctx.fillRect((this.cols - 1) * this.size, (this.rows - 1) * this.size, this.size, this.size);
+  
+    
+    
 
     ctx.strokeStyle = this.mazeColor;
     ctx.strokeRect(0, 0, mazeHeight, mazeWidth);
@@ -195,9 +201,17 @@ class Maze {
 
   }
 
+// winGame() {
+//   for (let col = 0; col < this.cols; col++) {
+//     for (let row = 0; row < this.rows; row++) {
+//       if (this.cell[col][row])
+//     }
+//   }
+ 
+// } 
 }
 
-
+// Player 1 Keys
 function onKeyDown1(event) {
   switch (event.keyCode) {
     case 65:
@@ -225,7 +239,7 @@ function onKeyDown1(event) {
   }
   maze.draw();
 }
-
+// Player 2 Keys
 function onKeyDown2(event) {
   switch (event.keyCode) {
     case 37:
@@ -254,26 +268,35 @@ function onKeyDown2(event) {
   maze.draw();
 }
 
+// Win Condition
 
 
-function winGame(event) {
-  if(start[0] == end[0] && start[1] == end[1]) {
-    alert('You Won!');
-    reset();
-  } 
-};
+// Timer: Lose condition
 
+let timeLeft = 45;
+const clock = document.querySelector('.timer');
+timer = setInterval(countdown, 1000);
 
-
-
+function countdown() {
+  if (timeLeft == -1) {
+    alert('Game Over')
+    location.reload();
+    return false;
+  } else {
+    timeLeft--;
+    console.log(timeLeft);
+  }
+}
 
 function onLoad() {
 
   canvas = document.getElementById("maze");
   ctx = canvas.getContext("2d");
+  console.log(ctx)
   player1 = new Player();
   player2 = new Player();
   maze = new Maze(20, 20, 40);
+  console.log(maze);
   document.addEventListener("keydown", onKeyDown1);
   document.addEventListener("keydown", onKeyDown2);
  
