@@ -166,7 +166,7 @@ class Maze {
                     ctx.lineTo((col + 1) * this.size, (row + 1 ) * this.size); 
                     ctx.strok(); 
                 }
-                if (this.cells[col][row].westWal) {
+                if (this.cells[col][row].westWall) {
                     ctx.beginPath();
                     ctx.moveTo(col * this.size, row * this.size);
                     ctx.lineTo(col * this.size, (row + 1 ) * this.size); 
@@ -180,3 +180,33 @@ class Maze {
     }
 
 }
+
+function onKeyDown(evt) {
+    switch (evt.keyCode) {
+        case 65:
+            if (!maze.cells[player1.col][player1.row].westWall) {
+                player1.col -= 1;
+            }
+            break;
+        case 68: 
+            if (!maze.cells[player1.col][player1.row].eastWall) {
+                player1.col += 1;
+            }
+            break;
+        case 83:
+            if (!maze.cells[player1.col][player1.row].southWall) {
+                player1.row += 1;
+            }
+            break;
+        case 87:
+            if (!maze.cells[player1.col][player1.row].northWall) {
+                player1.row -= 1;
+            }
+            break;
+        default:
+            break;
+    }
+    maze.draw();
+}
+
+
