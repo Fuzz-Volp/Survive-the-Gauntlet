@@ -2,40 +2,41 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="./model/model.css">
+  <link rel="stylesheet" href="./modal/modal.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="script.js"></script>
-  <script src="./model/model.js" defer></script>
+  <script src="./modal/modal.js" defer></script>
   <title>Survive The Gauntlet</title>
 </head>
 <body onload="onLoad();">
   <div class="container">
     <!-- title -->
-    <h2>Survive the Gauntlet</h2>
+    <h1>Survive the Gauntlet</h1>
 
     <!-- canvas -->
     <canvas id="maze"></canvas>
   </div>
+  <!-- timer -->
+  <!-- <div class="timer"></div> -->
 
   <!-- modal -->
-  <div class="modelContainer">
+  <div class="modalContainer">
     <button id="openModal">!</button>
     <div id="modal">
       <div id="modal-textbox">
-        <a id="close" href="#">Close</a>
         <h1>How to Play</h1>
         <p>
             Adventurers beware! 
         </p>
         <p>
-          This has been the tomb of many a poor soul. This maze is filled with traps and creatures that could break any brave soul, that however, is the least of your concerns, it is filled with poison gasses that will eventually take your life. Hurry, your time is running out!
+          This has been the tomb of many a poor soul. This maze is filled with poison gasses that will eventually take your life. Hurry, your time is running out!
         </p>
         <p>
-          Use the arrow keys to navigate the treacherous pathways to safety.
+          Use the Arrow keys and the WASD keys to navigate the treacherous pathways to safety.
         </p>
-        <span><button class="one">One Player</button><button class="two">Two Player</button></span>
+       <button class="start">Start Game</button>
       </div>
     </div>
 </body>
