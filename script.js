@@ -94,11 +94,39 @@ class Maze {
                             break;
                         case 2: 
                             if (currentCell.row !== (this.rows - 1) && !this.cells[currentCell.col][currentCell.row + 1].visited) {
-
+                                currentCell.southWall = false;
+                                nextCell = this.cells[currentCell.col][currentCell.row + 1];
+                                nextCell.northWall = false;
+                                neighbor = true;
                             }
+                            break;
+                        case 3:
+                            if (currentCell.col !== 0 && !this.cells[currentCell.col - 1][currentCell.row].visited) {
+                                currentCell.westWal = false; 
+                                nextCell = this.cells[currentCell.col - 1][currentCell.row];
+                                nextCell.eastWall = false;
+                                neighbor = true;
+                            }
+                            break;
                     }
+                    if (neighbor) {
+                        stack.push(nextCell);
+                    }
+                } while (!neighbor)
+            } else {
+                currentCell = stack.pop();
+            }
+        }
+        this.draw();
+    }
+    isUnvisited() {
+        for (let col = 0; col < this.cols; col++) {
+            for(let row = 0; row < this.rows; row++) {
+                if (!this.cells[col][row].visited) {
+                    return true;
                 }
             }
         }
+        return false;
     }
 }
